@@ -40,7 +40,6 @@ export class ReceiptsService {
     const receipt = await this.findOne(receiptId);
 
     if (dto.issuedAt !== undefined)
-      
       receipt.issuedAt = new Date(dto.issuedAt);
     if (dto.name !== undefined) receipt.name = dto.name;
     if (dto.price !== undefined) receipt.price = dto.price;

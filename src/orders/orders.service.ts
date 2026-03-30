@@ -1,4 +1,4 @@
-import { forwardRef, Inject, Injectable } from '@nestjs/common';
+import { Inject, Injectable } from '@nestjs/common';
 import { ClientProxy } from '@nestjs/microservices';
 import { NotificationsService } from 'src/notifications/notifications.service';
 
@@ -6,7 +6,6 @@ import { NotificationsService } from 'src/notifications/notifications.service';
 export class OrdersService {
   constructor(
     @Inject('ORDERS_SERVICE') private client: ClientProxy,
-    @Inject(forwardRef(() => NotificationsService))
     private readonly notifications: NotificationsService,
   ) {}
 
